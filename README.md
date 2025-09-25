@@ -6,7 +6,7 @@
 3. Open a terminal or command prompt.
 4. Navigate to the directory where the file is saved.
 5. Run the program with the command: `python3 adventure_toolkit.py`
-## 5+ test transcripts (copy/paste console text)
+## 5 test transcripts
 ### Test 1: Valid Path (Time, Coins, and Adventure Success)
 
 Adventure Toolkit — Chapters 1–3,5
