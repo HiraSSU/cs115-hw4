@@ -14,27 +14,27 @@ Adventure Toolkit — Chapters 1–3,5
 Enter total seconds: 367
 H:MM:SS = 0:06:07
 Enter copper pieces (cp): 1349
-Coins → gp:1 sp:34 cp:9
+Coins → gp:1  sp:34  cp:9
 Enter age: 25
 Citizen (y/n): y
 Eligible? True
 
 === Mini-Adventure ===
-What is your name, adventurer? Anya
+What is your name, adventurer? shawn
 Do you carry a torch? (y/n): y
+# DEBUG: name=shawn, has_torch=True
 
-Welcome, Anya. The torches flicker as you enter the ruins…
-You reach a fork: the left path is windy; the right path is silent.
+Welcome, shawn. The torches flicker as you enter the ruins…
+
+You reach a fork: left path is windy; right path is silent.
 Choose (left/right): right
-You spot a hidden alcove with an iron gate, shimmering with a faint light.
+You spot a hidden alcove with an iron gate.
 Enter the 2-digit guard code (3 attempts): 50
 Too low.
 Enter the 2-digit guard code (2 attempts): 90
 Too high.
 Enter the 2-digit guard code (1 attempts): 77
-Success! The gate opens...
-Treasure glitters beyond! You have found the lost wealth of the ancients.
-
+Success! The gate opens. Treasure glitters beyond.
 
 ### Test 2: Invalid Input Re-prompting (Recursive Input Validation)
 
@@ -43,70 +43,111 @@ Adventure Toolkit — Chapters 1–3,5
 Enter total seconds: abc
 Please enter a whole number.
 Enter total seconds: -5
-H:MM:SS = 0:-5:00
+H:MM:SS = -1:59:55
 Enter copper pieces (cp): 1.5
 Please enter a whole number.
 Enter copper pieces (cp): 100
-Coins → gp:0 sp:10 cp:0
+Coins → gp:0  sp:10  cp:0
 Enter age: twenty
 Please enter a whole number.
 Enter age: 20
 Citizen (y/n): maybe
-Please enter one of: y, n
+Please enter one of: n, y
 Citizen (y/n): Y
 Eligible? True
 
+=== Mini-Adventure ===
+What is your name, adventurer? shawn
+Do you carry a torch? (y/n): y
+# DEBUG: name=shawn, has_torch=True
+
+Welcome, shawn. The torches flicker as you enter the ruins…
+
+You reach a fork: left path is windy; right path is silent.
+Choose (left/right): left
+Your torch reveals markings that guide you safely.
+You follow the markings to a sunlit exit. Freedom!
 
 ### Test 3: Guard Code Failure Path
 
-... (Prep Utilities omitted for brevity)
-=== Mini-Adventure ===
-What is your name, adventurer? Gorok
-Do you carry a torch? (y/n): y
+Adventure Toolkit — Chapters 1–3,5
+=== Prep Utilities ===
+Enter total seconds: 200
+H:MM:SS = 0:03:20
+Enter copper pieces (cp): 200
+Coins → gp:0  sp:20  cp:0
+Enter age: 25
+Citizen (y/n): y
+Eligible? True
 
-Welcome, Gorok. The torches flicker as you enter the ruins…
-You reach a fork: the left path is windy; the right path is silent.
+=== Mini-Adventure ===
+What is your name, adventurer? shawn
+Do you carry a torch? (y/n): y
+# DEBUG: name=shawn, has_torch=True
+
+Welcome, shawn. The torches flicker as you enter the ruins…
+
+You reach a fork: left path is windy; right path is silent.
 Choose (left/right): right
-You spot a hidden alcove with an iron gate, shimmering with a faint light.
+You spot a hidden alcove with an iron gate.
 Enter the 2-digit guard code (3 attempts): 10
 Too low.
 Enter the 2-digit guard code (2 attempts): 20
 Too low.
 Enter the 2-digit guard code (1 attempts): 30
 Too low.
-No attempts left. The guard code remains a mystery.
-Alas, the mechanism locks with a clang, sealing your fate.
-
+Alas, the mechanism locks with a clang.
 
 ### Test 4: Eligibility Boundary Values
 
-... (Prep Utilities)
+Adventure Toolkit — Chapters 1–3,5
+=== Prep Utilities ===
+Enter total seconds: 200
+H:MM:SS = 0:03:20
+Enter copper pieces (cp): 200
+Coins → gp:0  sp:20  cp:0
 Enter age: 17
 Citizen (y/n): y
 Eligible? False
-Enter age: 18
-Citizen (y/n): n
-Eligible? False
-Enter age: 18
-Citizen (y/n): y
-Eligible? True
 
+=== Mini-Adventure ===
+What is your name, adventurer? shawn
+Do you carry a torch? (y/n): n
+# DEBUG: name=shawn, has_torch=False
+
+Welcome, shawn. The torches flicker as you enter the ruins…
+
+You reach a fork: left path is windy; right path is silent.
+Choose (left/right): left
+Darkness hides a pit. You stumble but recover.
+Bruised but wiser, you decide to return another day.
 
 ### Test 5: Adventure Failure Path (No Torch)
 
-... (Prep Utilities omitted for brevity)
+Adventure Toolkit — Chapters 1–3,5
+=== Prep Utilities ===
+Enter total seconds: 300
+H:MM:SS = 0:05:00
+Enter copper pieces (cp): 300
+Coins → gp:0  sp:30  cp:0
+Enter age: 25
+Citizen (y/n): y
+Eligible? True
+
 === Mini-Adventure ===
-What is your name, adventurer? Elara
+What is your name, adventurer? shawn
 Do you carry a torch? (y/n): n
+# DEBUG: name=shawn, has_torch=False
 
-Welcome, Elara. The torches flicker as you enter the ruins…
-You reach a fork: the left path is windy; the right path is silent.
+Welcome, shawn. The torches flicker as you enter the ruins…
+
+You reach a fork: left path is windy; right path is silent.
 Choose (left/right): right
-You hear the sound of dripping water ahead. The ground becomes slick and you decide to turn back.
-The path is impassable. You retreat, deciding the risk is too great.
-
+You hear water ahead. The ground is slick.
+A shallow stream bars your path; you turn back.
 
 ## Contributions section: who did what
+
 
 ## Known issues (if any)
 * Negative numbers for seconds or copper pieces are not explicitly validated, though the `ask_int` function ensures they are whole numbers. The output for negative seconds is not human-friendly. This is a minor issue given the prompt's focus on positive integers.
