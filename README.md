@@ -109,3 +109,4 @@ The path is impassable. You retreat, deciding the risk is too great.
 ## Contributions section: who did what
 
 ## Known issues (if any)
+* Negative numbers for seconds or copper pieces are not explicitly validated, though the `ask_int` function ensures they are whole numbers. The output for negative seconds is not human-friendly. This is a minor issue given the prompt's focus on positive integers.
