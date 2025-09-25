@@ -7,6 +7,6 @@
 3. Open a terminal or command prompt.
 4. Navigate to the directory where the file is saved.
 5. Run the program with the command: `python3 adventure_toolkit.py`
-  - 5+ test transcripts (copy/paste console text)
+- 5+ test transcripts (copy/paste console text)
   - Contributions section: who did what
   - Known issues (if any)
