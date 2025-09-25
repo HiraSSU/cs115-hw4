@@ -22,7 +22,7 @@ Eligible? True
 === Mini-Adventure ===
 What is your name, adventurer? shawn
 Do you carry a torch? (y/n): y
-# DEBUG: name=shawn, has_torch=True
+### DEBUG: name=shawn, has_torch=True
 
 Welcome, shawn. The torches flicker as you enter the ruins…
 
