@@ -147,7 +147,9 @@ You hear water ahead. The ground is slick.
 A shallow stream bars your path; you turn back.
 
 # Contributions section: who did what
-
+All students assisted each other throughout the assignment for the majority of it.
+Shawn and Hector focused on Prep Utilities and debugging
+Vonnie and Derek focused on the mini-adventure
 
 # Known issues (if any)
-* Negative numbers for seconds or copper pieces are not explicitly validated, though the `ask_int` function ensures they are whole numbers. The output for negative seconds is not human-friendly. This is a minor issue given the prompt's focus on positive integers.
+* Negative numbers for seconds or copper pieces are not explicitly validated, though the `ask_int` function ensures they are whole numbers. The output for negative seconds is not human-friendly, but still runs.
