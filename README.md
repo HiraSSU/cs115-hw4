@@ -7,7 +7,7 @@
 4. Navigate to the directory where the file is saved.
 5. Run the program with the command: `python3 adventure_toolkit.py`
 # 5 test transcripts
-## Test 1: Valid Path (Time, Coins, and Adventure Success)
+## Test 1: Valid Path 
 
 Adventure Toolkit — Chapters 1–3,5
 === Prep Utilities ===
@@ -36,7 +36,7 @@ Too high.
 Enter the 2-digit guard code (1 attempts): 77
 Success! The gate opens. Treasure glitters beyond.
 
-## Test 2: Invalid Input Re-prompting (Recursive Input Validation)
+## Test 2: Invalid Input
 
 Adventure Toolkit — Chapters 1–3,5
 === Prep Utilities ===
@@ -68,7 +68,7 @@ Choose (left/right): left
 Your torch reveals markings that guide you safely.
 You follow the markings to a sunlit exit. Freedom!
 
-## Test 3: Guard Code Failure Path
+## Test 3: Guard Code Failure
 
 Adventure Toolkit — Chapters 1–3,5
 === Prep Utilities ===
